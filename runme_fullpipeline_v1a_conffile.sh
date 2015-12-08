@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#version 1.0
+
 ######################### parameters ########################################
 #cpus=72
 #dodemultiplex=1
