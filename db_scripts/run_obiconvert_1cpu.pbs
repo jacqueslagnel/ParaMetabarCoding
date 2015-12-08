@@ -1,0 +1,30 @@
+#!/bin/bash
+#PBS -l walltime=24:00:00
+#PBS -q bigmem
+#PBS -d /home/jacques/metabarcoding/embl
+#PBS -N obidb
+#PBS -o obiconvert_db_ori.out
+#PBS -j oe
+#PBS -m n
+#PBS -l nodes=1:ppn=1
+
+dbpath=/mnt/big/EMBL/embl/obiconverted_ori 
+#embl_r124
+#cd /home/jacques/metabarcoding/embl
+rp=/mnt/big/Metagenomics/OBITools-1.1.16/bin
+source ~/metabarcoding/obipath.env
+#gunzip /mnt/big/EMBL/ftp.ebi.ac.uk/pub/databases/embl/release/std/rel_std_*.dat.gz
+
+echo "#-------- obiconvert -----------------"
+date
+mkdir -p ${dbpath}
+
+#/bin/zcat /mnt/big/EMBL/ftp.ebi.ac.uk/pub/databases/embl/release/std/rel_std_*.dat.gz |${rp}/obiconvert --embl -t /mnt/big/blastdb/ncbi_taxa --ecopcrdb-output=/home/jacques/metabarcoding/data_sample_fboyer/db/embl_r123 --
+#${rp}/obiconvert --embl -t /mnt/big/blastdb/ncbi_taxa --ecopcrdb-output=${dbpath}/embl_r123_r124 /mnt/big/EMBL/ftp.ebi.ac.uk/pub/databases/embl/release/std/*_std_*.dat
+
+
+${rp}/obiconvert --skip-on-error --embl -t /mnt/big/blastdb/ncbi_taxa --ecopcrdb-output=${dbpath}/embl_r124 /mnt/big/EMBL/ftp.ebi.ac.uk/pub/databases/embl/release/std/*_std_*.dat
+
+date
+exit 0
+
