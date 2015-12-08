@@ -1,7 +1,12 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 #version 1.01
 
+=======
+#version 1.0
+#TODO add lisence
+>>>>>>> test
 ######################### parameters ########################################
 #cpus=72
 #dodemultiplex=1
