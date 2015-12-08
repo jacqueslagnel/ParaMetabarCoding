@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #version 1.0
-
+#TODO add lisence
 ######################### parameters ########################################
 #cpus=72
 #dodemultiplex=1
